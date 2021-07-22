@@ -1,6 +1,25 @@
 <!DOCTYPE html>
-<html>
+<?php
+$alert = '';
+    if (!empty($_POST)) {
+    if (empty($_POST['user'])||empty($_POST['pass'])) {
+        $alert='Ingrese su usuario y contraseña';
+    }else{
+        require_once "connectionBD.php";
+        $user= $_POST['user'];
+        $pass=$_POST['pass'];
+        $sql="SELECT * FROM users WHERE user='$user' and pass='$pass'";
+        $query= mysqli_query($connection,$sql);
+        $result= mysqli_num_rows($query);
 
+        if($result>0){
+            $data = mysqli_fetch_array($query);
+            print_r($data);
+        }
+    }
+}
+?>
+<html>
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -17,15 +36,16 @@
         </div>
         <div class="row justify-content-center me-0 pe-0">
             <div class="col-12 col-md-4  border-1 shadow rounded">
-                <form class="p-5">
+                <form action="" method="post" class="p-5">
                     <div class="mb-3">
                         <label for="user" class="form-label">Usuario</label>
-                        <input type="text" class="form-control" id="user">
+                        <input type="text" name="user" class="form-control" id="user">
                     </div>
                     <div class="mb-3">
                         <label for="pass" class="form-label">Contraseña</label>
-                        <input type="password" class="form-control" id="pass">
+                        <input type="password" name="pass" class="form-control" id="pass">
                     </div>
+                    <div class="alert"><?php echo (isset($alert)?$alert:'')?></div>
                     <button type="submit" class="btn btn-primary">Ingresar</button>
                 </form>
             </div>
