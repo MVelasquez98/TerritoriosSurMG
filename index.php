@@ -1,6 +1,10 @@
 <!DOCTYPE html>
 <?php
 $alert = '';
+session_start();
+if(!empty($_SESSION['active'])){
+    header('location: home.html');
+}else{
     if (!empty($_POST)) {
     if (empty($_POST['user'])||empty($_POST['pass'])) {
         $alert='Ingrese su usuario y contraseña';
@@ -10,13 +14,21 @@ $alert = '';
         $pass=$_POST['pass'];
         $sql="SELECT * FROM users WHERE user='$user' and pass='$pass'";
         $query= mysqli_query($connection,$sql);
+        mysqli_close($connection);
         $result= mysqli_num_rows($query);
 
         if($result>0){
             $data = mysqli_fetch_array($query);
-            print_r($data);
+            $_SESSION['active']=true;
+            $_SESSION['user']=$data['user'];
+
+            header('location: home.html');
+        }else{
+            $alert = 'El usuario o la clave son incorrectas';
+            session_destroy();
         }
     }
+}
 }
 ?>
 <html>
@@ -26,7 +38,7 @@ $alert = '';
     <title>TerritoriosSMG</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="lib/bootstrap-5.0.2-dist/css/bootstrap.css">
-    <script src="/lib/bootstrap-5.0.2-dist/js/bootstrap.js"></script>
+    <script src="lib/bootstrap-5.0.2-dist/js/bootstrap.js"></script>
 </head>
 
 <body>
