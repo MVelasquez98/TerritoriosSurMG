@@ -3,7 +3,7 @@
 $alert = '';
 session_start();
 if(!empty($_SESSION['active'])){
-    header('location: home.html');
+    header('location: system/home.php');
 }else{
     if (!empty($_POST)) {
     if (empty($_POST['user'])||empty($_POST['pass'])) {
@@ -21,8 +21,8 @@ if(!empty($_SESSION['active'])){
             $data = mysqli_fetch_array($query);
             $_SESSION['active']=true;
             $_SESSION['user']=$data['user'];
-
-            header('location: home.html');
+            $_SESSION['role']=$data['role'];
+            header('location: system/home.php');
         }else{
             $alert = 'El usuario o la clave son incorrectas';
             session_destroy();

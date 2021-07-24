@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>TerritoriosSMG</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+    <link rel="stylesheet" href="../lib/bootstrap-5.0.2-dist/css/bootstrap.css">
+    <script src="../lib/bootstrap-5.0.2-dist/js/bootstrap.js"></script>
+</head>
+<style>
+    .btn-login {
+        border-radius: 3.2rem;
+        background-color: #a4a4a5;
+        border-color: #a4a4a5;
+    }
+</style>
+
+<body>
+    <nav class="navbar navbar-expand-sm  navbar-toggleable-sm navbar-light  bg-white ">
+        <div class="container">
+            <button class="navbar-toggler d-block d-lg-none" type="button" data-bs-toggle="collapse" data-bs-target="#menu_general" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+            <a class="navbar-brand logo mx-auto mx-md-0" href="/">TerritoriosSMG</a>
+            <div class="btn btn-sm btn-login">
+                <a class="nav-link text-white" href="../logout.php">
+                    <span class="d-none d-md-block">CERRAR SESIÓN</span>
+                    <i class="fas fa-sign-in-alt d-block d-md-none"></i>
+                </a>
+            </div>
+
+        </div>
+    </nav>
+    <nav id="menu" class="navbar navbar-expand-lg bg-white border-bottom  navbar-light  ">
+        <div class="container-fluid">
+            <div class="container">
+
+                <div id="menu_general" class="navbar-collapse collapse show" style="font-size: 1.2em;">
+                    <ul class="navbar-nav flex-grow-1 justify-content-center text-secondary">
+                        <li class="nav-item pr-lg-2 pr-md-2">
+                            <div class="menu_item">
+                                <a class="nav-link" href="/Index">
+                                    <!--<i class=""></i>-->Inicio
+                                </a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <div class="row me-0">
+        <div class="h1 px-5 py-3 text-center">Territorio 5</div>
+    </div>
+    <div class="row me-0 px-4 px-md-5">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Telefono</th>
+                    <th scope="col">Estado</th>
+                    <th scope="col">Comentarios</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th scope="row">1</th>
+                    <td>42350400</td>
+                    <td><select class="form-select" aria-label="Default select example">
+                        <option value="1">LL</option>
+                        <option value="2">INC</option>
+                        <option value="3">NA</option>
+                        <option value="3">FS</option>
+                        <option value="3">ND</option>
+                        <option value="3">NV</option>
+                        <option value="3">RV</option>
+                        <option value="3">Otro</option>
+                      </select></td>
+                    <td>
+                        <div class="input-group">
+                            <input type="search" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" placeholder="Escriba un comentario si corresponde">
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row">2</th>
+                    <td>43964042</td>
+                    <td><select class="form-select" aria-label="Default select example">
+                        <option value="1">LL</option>
+                        <option value="2">INC</option>
+                        <option value="3">NA</option>
+                        <option value="3">FS</option>
+                        <option value="3">ND</option>
+                        <option value="3">NV</option>
+                        <option value="3">RV</option>
+                        <option value="3">Otro</option>
+                      </select></td>
+                    <td>
+                        <div class="input-group">
+                            <input type="search" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" placeholder="Escriba un comentario si corresponde">
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row">3</th>
+                    <td>42907341</td>
+                    <td><select class="form-select" aria-label="Default select example">
+                        <option value="1">LL</option>
+                        <option value="2">INC</option>
+                        <option value="3">NA</option>
+                        <option value="3">FS</option>
+                        <option value="3">ND</option>
+                        <option value="3">NV</option>
+                        <option value="3">RV</option>
+                        <option value="3">Otro</option>
+                      </select></td>
+                    <td>
+                        <div class="input-group">
+                            <input type="search" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" placeholder="Escriba un comentario si corresponde">
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+
+</html>
